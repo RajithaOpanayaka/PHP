@@ -1,6 +1,6 @@
 <?php
 
-class Animal{
+abstract class Animal{
     private $size;
     private $color;
 
@@ -22,9 +22,8 @@ class Animal{
     public function getColor(){
         return $this->color;
     }
-    public function move(){
-        echo "move<br>";
-    }
+    //abstract method
+    abstract public function move();
 }
 
 ?>
