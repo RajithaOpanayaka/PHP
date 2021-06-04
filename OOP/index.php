@@ -8,5 +8,9 @@ $person2 = new Person("hello2",15);
 
 var_dump($person1);
 echo $person1->getAge().'<br>';
-echo Person::getCounter(); 
+echo Person::getCounter().'<br>'; 
+
+$stud = new Student("test",12);
+var_dump($stud);
+
 
