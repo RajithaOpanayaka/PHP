@@ -10,6 +10,10 @@ class Dog extends Animal{
     public function getType(){
         return $this->type;
     }
+    //override
+    public function move(){
+        echo "Run.<br>";
+    }
 }
 
 

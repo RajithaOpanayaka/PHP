@@ -22,6 +22,9 @@ class Animal{
     public function getColor(){
         return $this->color;
     }
+    public function move(){
+        echo "move<br>";
+    }
 }
 
 ?>
