@@ -1,21 +1,16 @@
 <?php
-    require_once "Animal.php";
     require_once "Dog.php";
-    ///Create animal
-    $animal = new Animal(10,"Black");
-    var_dump($animal);
-    echo '<br>';
-    $animal->setColor("Brown");
-    $animal->setSize(20);
-    var_dump($animal);
-    echo '<br>';
+    require_once "Cat.php";
+    
     $dog= new Dog(13,"Brown");
-    var_dump($dog);
-    echo '<br>';
     $dog->setType("Shepeard");
-    echo $dog->getType();
+    
+    $cat=new Cat(5,"Gray");
 
-    $animal->move();
-    $dog->move();
+    //Polymorphism
+    $animals =[$dog,$cat];
+    foreach ($animals as $animal){
+        $animal->play();
+    }
 
 ?>

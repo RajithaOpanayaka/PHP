@@ -1,8 +1,9 @@
 <?php
 
 require_once "Animal.php";
+require_once "Pet.php";
 
-class Dog extends Animal{
+class Dog extends Animal implements Pet{
     private $type;
     public function setType($type){
         $this->type=$type;
@@ -13,6 +14,10 @@ class Dog extends Animal{
     //override
     public function move(){
         echo "Run.<br>";
+    }
+    //override
+    public function play(){
+        echo "Fetch items.<br>";
     }
 }
 
