@@ -14,9 +14,10 @@ class Square implements ShapeInterface{
     public function area(){
         return $this->width*$this->height;
     }
-    public function volume(){
-        return null;
-    }
+    
 }
+
+$square =new Square(5,5);
+echo $square->area();
 
 ?>
