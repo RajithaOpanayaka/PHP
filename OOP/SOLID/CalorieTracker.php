@@ -1,5 +1,5 @@
 <?php
-
+require_once "ShowMessage.php";
 class CalorieTracker{
     private $maxCalories;
     private $calories=0;
@@ -7,15 +7,12 @@ class CalorieTracker{
     {
         $this->maxCalories+=$maxCalories;
     }
-    //two responsibilities track and show
+    //one responsibilities track 
     public function trackCalories($calories){
         $this->calories+=$calories;
         if($this->calories>$this->maxCalories){
-            $this->showCalorieSurplus();
+            ShowMessage::show("Max calories exceeded");
         }
-    }
-    public function showCalorieSurplus(){
-        echo "Max calories exceeded.\n";
     }
 }
 
