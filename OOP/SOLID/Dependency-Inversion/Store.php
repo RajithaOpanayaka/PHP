@@ -1,22 +1,23 @@
 <?php
 
+require_once "PaymentProcessor.php";
 require_once "Stripe.php";
 require_once "Paypal.php";
-
 class Store{
-    private $stripe;
+    private $paymentProcessor;
     
-    public function __construct($user)
+    public function __construct($paymentProcessor)
     {
-        $this->stripe = new Stripe($user);
+        $this->paymentProcessor = $paymentProcessor;
     }
     public function purchaseBike($quantity)
     {
-        $this->stripe->makePayment(200*$quantity);
+        $this->paymentProcessor->pay(200*$quantity);
     }
 }
-
-$store = new Store("Sam");
+$stripe = new Stripe("Sam");
+$paypal = new Paypal("Jay"); 
+$store = new Store($paypal);
 $store->purchaseBike(1);
 
 ?>
