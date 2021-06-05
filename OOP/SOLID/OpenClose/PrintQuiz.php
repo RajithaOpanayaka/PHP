@@ -1,5 +1,8 @@
 <?php
 
+require_once "TestQuestion.php";
+require_once "BooleanQuestion.php";
+require_once "MultipleQuestion.php";
 class PrintQuiz{
     public $questions;
     public function PrintQuiz($questions=[]){
@@ -7,24 +10,18 @@ class PrintQuiz{
     }
     public function print(){
         foreach($this->questions as $question){
-            echo $question["description"]."\n";
-            switch($question["type"]){
-                case "bool":
-                    echo "1. True \n";
-                    echo "2. False \n";
-                    break;
-                case "test":
-                    echo "_______________\n";
-
-            }
+            echo $question->getDescription()."\n";
+            $question->printQuestion();  
         }
     }
 
 }
 
 $quiz=[
-    ["type"=>"bool","description"=>"Select True or False answer"],
-    ["type"=>"test","description"=>"write short answer"]
+    new TestQuestion("1. Write short answer"),
+    new BooleanQuestion("2. Select True or False answer"),
+    new TestQuestion("3. Write short answer"),
+    new MultipleQuestion("4. Choose the correct answer",["A. Greater than","B. Less than"])
 ];
 
 $printQuiz=new PrintQuiz($quiz);
