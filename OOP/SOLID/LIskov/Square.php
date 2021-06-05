@@ -1,7 +1,7 @@
 <?php
-require_once "Rectangle.php";
+require_once "Shape.php";
 
-class Square extends Rectangle{
+class Square extends Shape{
     public function setWidth($width){
         $this->height=$width;
         $this->width=$width;
