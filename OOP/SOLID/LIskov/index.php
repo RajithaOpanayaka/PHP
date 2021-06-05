@@ -9,16 +9,16 @@ class RecEnlarge{
     }
 }
 
-$rectangle1=new Rectangle(10,2);
-$rectangle2=new Rectangle(5,5);
+$rectangle1=new Rectangle(5,5);
+$square=new Square(5,5);
 
 echo "Area of 1 ".$rectangle1->area()."\n";
-echo "Area of 2 ".$rectangle2->area()."\n";
+echo "Area of 2 ".$square->area()."\n";
 
 RecEnlarge::increaseWidth($rectangle1);
-RecEnlarge::increaseWidth($rectangle2);
+RecEnlarge::increaseWidth($square);
 
 echo "Increased area of 1 ".$rectangle1->area()."\n";
-echo "Increased area of 2 ".$rectangle2->area()."\n";
+echo "Increased area of 2 ".$square->area()."\n";
 
 ?>

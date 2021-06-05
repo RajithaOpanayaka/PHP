@@ -1,8 +1,8 @@
 <?php
 
 class Rectangle{
-    private $height;
-    private $width;
+    protected $height;
+    protected $width;
     public function __construct($height,$width)
     {
         $this->height=$height;
@@ -20,6 +20,9 @@ class Rectangle{
     }
     public function getWidth(){
         return $this->width;
+    }
+    public function getHeight(){
+        return $this->height;
     }
 }
 
