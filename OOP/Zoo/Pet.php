@@ -1,7 +1,9 @@
 <?php
 
-interface Pet{
+namespace Zoo;
+
+interface Pet
+{
     public function play();
 }
 
-?>
