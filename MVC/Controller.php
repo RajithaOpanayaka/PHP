@@ -12,7 +12,8 @@ class Controller
     }
     public function getMessage()
     {
-        return $this->model->getData();
+        $msg = $this->model->getData();
+        echo "Render view $msg \n";
     }
     public function setMessage($message)
     {

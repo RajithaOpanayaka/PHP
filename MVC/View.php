@@ -15,8 +15,8 @@ class View
     {
         $this->controller->setMessage($message);
     }
-    public function output()
+    public function output($data)
     {
-        echo $this->controller->getMessage()."\n";
+        echo "$data \n";
     }
 }

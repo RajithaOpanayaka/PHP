@@ -15,4 +15,4 @@ $view = new View($controller);
 
 $view->input("Hello");
 
-$view->output();
+$controller->getMessage();
