@@ -9,4 +9,6 @@ $router =  new Router();
 
 $router->get('/', [MainController::class, 'index']);
 
+$router->post('/create',[MainController::class, 'create']);
+
 $router->resolve();
