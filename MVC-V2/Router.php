@@ -7,6 +7,7 @@ use app\Models\Model;
 class Router
 {   
     private array $getRoutes = [];
+    private array $postRoutes = [];
     public $db;
 
     public function __construct()
@@ -18,6 +19,13 @@ class Router
     {
         $this->getRoutes[$url] = $fn;
     }
+
+    public function post($url,$fn)
+    {
+        $this->postRoutes[$url] = $fn;
+    }
+
+
     public function resolve()
     {   
         $currentUrl = $_SERVER['PATH_INFO'] ?? '/';
@@ -25,6 +33,8 @@ class Router
 
         if ($method === 'GET') {
             $fn = $this->getRoutes[$currentUrl] ?? null;
+        } else {
+            $fn = $this->postRoutes[$currentUrl] ?? null;
         }
         if ($fn) {
             call_user_func($fn,$this);
